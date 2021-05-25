@@ -156,7 +156,7 @@ public class InnerMapEditor {
             map[14][2] = 'b';
             map[14][3] = 'B';
         }
-    }
+    }//检查地图是否合理
 
     public void wrightNoticeBoard(int code) {
         String text = JOptionPane.showInputDialog("请输入信息") + "\n";

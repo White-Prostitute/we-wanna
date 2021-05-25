@@ -84,7 +84,7 @@ public class Menu implements Update{
         createH = imageCreate.getHeight(null);
         createX = 500-createW/2;
         createY = playY + playH + 20;
-    }
+    }//构造方法
 
     public void MouseClicked(int[] position) throws IOException, LineUnavailableException {
         if (mf.flag == 0){
@@ -137,7 +137,7 @@ public class Menu implements Update{
                 }
             }
         }
-    }
+    }//鼠标监听
 
     public class ChoseLevel{
         String path;
@@ -227,7 +227,7 @@ public class Menu implements Update{
             buttonSound = false;
         }
         else buttonSound = true;
-    }
+    }//更新
 
     public void draw(Graphics g2){
         //主菜单界面
@@ -280,5 +280,5 @@ public class Menu implements Update{
             if(!back)g2.drawImage(imageBack, backX, backY, backW, backH, null);
             else g2.drawImage(imageBack, backX-8, backY-4,backW+16, backH+8, null);
         }
-    }
+    }//绘制
 }
