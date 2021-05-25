@@ -1,0 +1,33 @@
+## 地图元素
+0  =  空
+1  =  砖块(Brick)
+2  =  通关大门(Gate)
+3  =  钥匙(Key)
+4  =  陷阱(Trap)
+5  =  机关(Handle)
+a  =  传送门之一(TransformGate)
+A  =  传送门之二(TransformGate)
+u  =  向上单向砖块(oneWayBrick direction --> "up")
+d  =  向下单向砖块(oneWayBrick direction --> "down")
+l  =  向左单向砖块(oneWayBrick direction --> "left")
+r  =  向右单向砖块(oneWayBrick direction --> "right")
+z  =  信息板1
+x  =  信息板2
+c  =  信息板3
+v  =  信息板4
+
+
+## 15行  --> 多余元素放置处
+## 16行  --> 设置释放分身的次数限制(Mario.shadowTimes)
+## 17+行 --> 信息板内容(NoticeBoard.text)
+
+
+## flag对应页面
+0 --> 主菜单
+1 --> 游戏内部
+2 --> 帮助界面
+3 --> 选关界面
+4 --> 设置界面
+5 --> DIY创造界面
+6 --> DIY选择界面
+7 --> DIY地图列表界面
