@@ -77,7 +77,6 @@ public class Mario extends GameObject implements Update{
             else if (mario.isCreateShadow){
                 mario.isCreateShadow = false;
                 mario.shadowTimes --;
-                mario.jumpTime = 0;
                 mario.x = x;
                 mario.y = y;
             }

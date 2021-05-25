@@ -178,6 +178,11 @@ public class MainFrame extends JFrame {
                     }
                 }
             }
+            if(flag==1){
+                bg_img = new ImageIcon("image/bg.png").getImage();
+            }else{
+                bg_img = new ImageIcon("image/background.png").getImage();
+            }
         }
 
         @Override

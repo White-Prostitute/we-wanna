@@ -198,6 +198,11 @@ public class Map{
     public void pass(){
             if(stage == 0){
                 level++;
+                if(level>10){
+                    mf.flag = 3;
+                    mf.bgm.playMenuBGM();
+                    return;
+                }
                 try {
                     refreshMap();
                 } catch (IOException e) {
@@ -347,6 +352,8 @@ public class Map{
         public void draw(Graphics g2){
             g2.drawImage(img, x, y, null);
             if (isMarioOn){
+                Font font = new Font(Font.SANS_SERIF, Font.BOLD, 18);
+                g2.setColor(Color.white);
                 g2.drawString(text, x, y-10);
             }
         }
