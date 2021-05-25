@@ -12,5 +12,4 @@ public class Help extends GameObject {
     public void draw(Graphics g2){
         g2.drawImage(img, x, y, null);
     }
-
 }

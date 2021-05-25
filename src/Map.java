@@ -170,25 +170,29 @@ public class Map{
     }//使用开关
 
     public void draw(Graphics g2){
-        for (int i = bricks.size() - 1; i >= 0; i--) {
-            bricks.get(i).draw(g2);
+        try {
+            for (int i = bricks.size() - 1; i >= 0; i--) {
+                bricks.get(i).draw(g2);
+            }
+            for (int i = traps.size() - 1; i >= 0; i--) {
+                traps.get(i).draw(g2);
+            }
+            for (int i = oneWayBricks.size() - 1; i >= 0; i--) {
+                oneWayBricks.get(i).draw(g2);
+            }
+            for (int i = noticeBoards.size() - 1; i >= 0; i--) {
+                noticeBoards.get(i).draw(g2);
+            }
+            for (int i = handles.size() - 1; i >= 0; i--) {
+                handles.get(i).draw(g2);
+            }
+            gateA.draw(g2);
+            key.draw(g2);
+            transformGateA.draw(g2);
+            transformGateB.draw(g2);
+        }catch (Exception e){
+            draw(g2);
         }
-        for (int i = traps.size() - 1;i>=0;i--){
-            traps.get(i).draw(g2);
-        }
-        for (int i = oneWayBricks.size() - 1;i >=0;i--){
-            oneWayBricks.get(i).draw(g2);
-        }
-        for (int i = noticeBoards.size() - 1 ; i>=0;i--){
-            noticeBoards.get(i).draw(g2);
-        }
-        for(int i = handles.size() - 1 ; i>=0;i--){
-            handles.get(i).draw(g2);
-        }
-        gateA.draw(g2);
-        key.draw(g2);
-        transformGateA.draw(g2);
-        transformGateB.draw(g2);
     }//绘制地图
 
     public void pass(){
