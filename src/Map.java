@@ -199,7 +199,7 @@ public class Map{
             if(stage == 0){
                 level++;
                 if(level>10){
-                    mf.flag = 3;
+                    mf.flag = 8;
                     mf.bgm.playMenuBGM();
                     return;
                 }

@@ -13,6 +13,7 @@ import java.util.Timer;
 public class MainFrame extends JFrame {
 
     Image bg_img;
+    Image bg_success;
     Mouse mouse = new Mouse(this);
     Setting setting = new Setting(this);
     Mario mario = Mario.getInstance(this);
@@ -35,6 +36,14 @@ public class MainFrame extends JFrame {
     int timer = 0;
     //构造方法
     public MainFrame() throws IOException, UnsupportedAudioFileException, LineUnavailableException {
+
+        bg_img = new ImageIcon("image/background.png").getImage();
+        bg_success = new ImageIcon("image/success.png").getImage();
+        bgm.loadBGM();
+        bgm.playMenuBGM();
+        refreshTimer.scheduleAtFixedRate(refresh, 0, 1000/fps);
+        marioTimer.scheduleAtFixedRate(marioTask, 0, 1000/fps);
+
         //窗口初始化
         this.setSize(1000, 700);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -45,12 +54,6 @@ public class MainFrame extends JFrame {
         this.setVisible(true);
         this.addKeyListener(marioKeyListener);
         this.addMouseListener(marioMouseListener);
-
-        bg_img = new ImageIcon("image/background.png").getImage();
-        bgm.loadBGM();
-        bgm.playMenuBGM();
-        refreshTimer.scheduleAtFixedRate(refresh, 0, 1000 / fps);
-        marioTimer.scheduleAtFixedRate(marioTask, 0, 1000/fps);
     }
     //主方法
     public static void main(String[] args) throws IOException, UnsupportedAudioFileException, LineUnavailableException {
@@ -78,10 +81,14 @@ public class MainFrame extends JFrame {
         else if(flag == 5){
             innerMapEditor.draw(g2);
         }
+        else if(flag == 8){
+            g2.drawImage(bg_success, 0, 0, null);
+        }
         menu.draw(g2);
         g.drawImage(img, 0, 0, null);
     }
     //键盘监听
+
     public class MarioKeyListener implements KeyListener {
 
         @Override
@@ -137,7 +144,13 @@ public class MainFrame extends JFrame {
             if(code == 16){
                 innerMapEditor.isOnShift = false;
             }
+            if(flag==1){
+                bg_img = new ImageIcon("image/bg.png").getImage();
+            }else{
+                bg_img = new ImageIcon("image/background.png").getImage();
+            }
         }
+
     }
     //鼠标监听
     public class MarioMouseListener implements MouseListener{
