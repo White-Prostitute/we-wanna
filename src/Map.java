@@ -352,7 +352,8 @@ public class Map{
         public void draw(Graphics g2){
             g2.drawImage(img, x, y, null);
             if (isMarioOn){
-                Font font = new Font(Font.SANS_SERIF, Font.BOLD, 18);
+                Font font = new Font(Font.SANS_SERIF, Font.BOLD, 12);
+                g2.setFont(font);
                 g2.setColor(Color.white);
                 g2.drawString(text, x, y-10);
             }

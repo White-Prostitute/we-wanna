@@ -17,10 +17,10 @@ public class MainFrame extends JFrame {
     Setting setting = new Setting(this);
     Mario mario = Mario.getInstance(this);
     Map map = Map.getInstance(this);
+    InnerMapEditor innerMapEditor = InnerMapEditor.getInstance();
     Menu menu = new Menu(this, mouse);
     Help help = new Help();
     Bgm bgm = Bgm.getInstance();
-    InnerMapEditor innerMapEditor = InnerMapEditor.getInstance();
     //线程的创建
     Refresh refresh = new Refresh();
     marioTask marioTask = new marioTask();
